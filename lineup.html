@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+u<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -19,7 +19,7 @@ cursor:pointer;
 color:white;
 background:linear-gradient(90deg,#1f6bff,#00c3ff);
 box-shadow:0 0 20px rgba(0,150,255,0.4);
-transition:0.4s ease;
+transition:0.4s ease; 
 }
 
 .ultra-cta:hover{
@@ -214,17 +214,20 @@ transform:scale(1.05);
     <img src="stargazer.png" class="car-img">
 
     <p class="price">Mulai Rp 259.700.000</p>
-</div>
+ <button class="toggle-btn" onclick="toggleTipe('stargazer-tipe')">
+    Lihat Tipe
+  </button>
 
-<div class="car-detail">
-  <ul>
-    <li>Active MT — Rp 259.700.000</li>
-    <li>Active IVT — Rp 273.100.000</li>
-    <li>Essential MT — Rp 271.800.000</li>
-    <li>Essential IVT — Rp 283.500.000</li>
-    <li>Prime IVT — Rp 333.400.000</li>
-    <li>Style — Rp 350.950.000</li>
-  </ul>
+  <div id="stargazer-tipe" class="tipe-box">
+    <ul>
+      <li>Active MT — Rp 259.700.000</li>
+      <li>Active IVT — Rp 273.100.000</li>
+      <li>Essential MT — Rp 271.800.000</li>
+      <li>Essential IVT — Rp 283.500.000</li>
+      <li>Prime IVT — Rp 333.400.000</li>
+      <li>Style — Rp 350.950.000</li>
+    </ul>
+  </div>
 </div>
 
 <div class="car-card" onclick="toggleAccordion(this)">

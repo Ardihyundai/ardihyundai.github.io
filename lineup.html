@@ -384,7 +384,62 @@ display:block;
 }
 
 }
-  
+  /* ====== TENTANG KAMI ====== */
+
+.about-section{
+    padding:80px 20px;
+    background:#071a2d;
+    text-align:center;
+}
+
+.about-container{
+    max-width:800px;
+    margin:auto;
+}
+
+.about-section h2{
+    font-size:32px;
+    margin-bottom:15px;
+    color:#00a3e0;
+}
+
+.about-highlight{
+    font-weight:600;
+    margin-bottom:20px;
+    color:#ffffff;
+}
+
+.about-section p{
+    line-height:1.7;
+    color:#cccccc;
+    margin-bottom:15px;
+}
+
+.about-list{
+    margin:30px 0;
+    color:white;
+    font-size:15px;
+}
+
+.about-list div{
+    margin-bottom:8px;
+}
+
+.about-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#00a3e0;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.about-btn:hover{
+    background:#008ac2;
+}
 </style>
 </head>
 
@@ -667,10 +722,39 @@ document.getElementById("hasil").innerHTML =
 <p>Hubungi kami untuk jadwal test drive di rumah atau showroom.</p>
 </div>
 
-<div class="section" id="tentang">
-<h2>Tentang Kami</h2>
-<p>Ardi – Authorized Hyundai Sales Consultant Cirebon.</p>
-</div>
+<section id="tentang" class="about-section">
+  <div class="about-container">
+    <h2>Tentang Kami</h2>
+
+    <p class="about-highlight">
+      Sales Resmi Hyundai Cirebon – Profesional, Transparan & Terpercaya
+    </p>
+
+    <p>
+      Saya adalah Sales Consultant resmi Hyundai Cirebon yang siap membantu Anda
+      dalam proses pembelian mobil Hyundai dengan mudah, aman, dan terpercaya.
+    </p>
+
+    <p>
+      Melayani pembelian unit seperti Stargazer, Creta, Kona EV, Ioniq 5,
+      Santa Fe hingga Palisade dengan penawaran terbaik,
+      DP ringan, bunga rendah, serta proses approval cepat.
+    </p>
+
+    <div class="about-list">
+      <div>✔ Konsultasi Gratis</div>
+      <div>✔ Simulasi Kredit Transparan</div>
+      <div>✔ Ready Test Drive</div>
+      <div>✔ Bisa Survey Rumah / Kantor</div>
+      <div>✔ Proses Cepat & Aman</div>
+      <div>✔ Melayani Cirebon & Sekitarnya</div>
+    </div>
+
+    <a href="https://wa.me/6287772805133" class="about-btn">
+      Hubungi Sekarang
+    </a>
+  </div>
+</section>
 
 <div class="section" id="kontak">
 <h2>Kontak</h2>
@@ -686,6 +770,7 @@ function closeMenu(){
   document.getElementById("sideMenu").classList.remove("active");
   document.getElementById("overlay").classList.remove("active");
 }
+    
 </script>
 
 </body>

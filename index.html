@@ -331,6 +331,21 @@ ARDI HYUNDAI CIREBON
 <div class="menu-toggle" onclick="openMenu()">☰</div>
 
 </header>
+
+  <div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+
+<div class="side-menu" id="sideMenu">
+<div class="close-btn" onclick="closeMenu()">✕</div>
+
+<a href="index.html">Home</a>
+<a href="lineup.html">Lineup / Produk</a>
+<a href="#promo">Promo</a>
+<a href="#simulasi">Simulasi Kredit</a>
+<a href="#testdrive">Test Drive</a>
+<a href="#tentang">Tentang Kami</a>
+<a href="#kontak">Kontak</a>
+
+</div>
   
 <!-- Background Video -->
 <video autoplay muted loop playsinline class="video-bg">
@@ -381,6 +396,17 @@ Melayani Cirebon & Sekitarnya
 </div>
 
 <a href="https://wa.me/6287772805133" class="floating-wa">💬</a>
+<script>
+function openMenu(){
+document.getElementById("sideMenu").classList.add("active");
+document.getElementById("overlay").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("sideMenu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+}
+</script>
 
 </body>
 </html>

@@ -129,23 +129,47 @@ margin-top:10px;
 color:#00ff90;
 font-weight:bold;
 }
+
+  .bg-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+overflow:hidden;
+}
+
+.bg-video video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:-1;
+}
 </style>
 </head>
 
 <body>
-
-<header>ARDI HYUNDAI CIREBON OFFICIAL</header>
-
-  <!-- HERO VIDEO -->
-<div class="hero-video">
+  <!-- GLOBAL BACKGROUND VIDEO -->
+<div class="bg-video">
   <video autoplay muted loop playsinline>
     <source src="lineupvideo.mp4" type="video/mp4">
   </video>
-  <div class="hero-overlay">
-    <h1>HYUNDAI LINEUP 2026</h1>
-    <p>Drive The Future</p>
-  </div>
 </div>
+  
+<header>ARDI HYUNDAI CIREBON OFFICIAL</header>
+
+  
 
 <!-- ================= STARGAZER ================= -->
 <div class="section">

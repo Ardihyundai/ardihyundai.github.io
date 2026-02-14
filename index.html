@@ -637,5 +637,57 @@ document.getElementById("overlay").classList.remove("active");
     <a href="artikel-hyundai-cirebon.html">Informasi Hyundai</a>
     <a href="dealer-hyundai-cirebon.html">Dealer Resmi</a>
 </div>
+ <!-- MODAL TEST DRIVE -->
+<div id="testDriveModal" class="testdrive-modal">
+  <div class="testdrive-content">
+    <span class="close-modal" onclick="closeTestDrive()">×</span>
+    <h2>Booking Test Drive</h2>
+
+    <input type="text" id="tdNama" placeholder="Nama Anda">
+
+    <select id="tdUnit">
+      <option value="">Pilih Unit</option>
+      <option>Stargazer</option>
+      <option>Stargazer Cartenz</option>
+      <option>Creta</option>
+      <option>Kona EV</option>
+      <option>Ioniq 5</option>
+      <option>Santa Fe</option>
+      <option>Palisade</option>
+    </select>
+
+    <input type="date" id="tdTanggal">
+    <input type="text" id="tdLokasi" placeholder="Lokasi Test Drive">
+
+    <button onclick="kirimTestDrive()">Kirim ke WhatsApp</button>
+  </div>
+<script>
+function openTestDrive(unit = "") {
+  document.getElementById("testDriveModal").style.display = "flex";
+  if(unit){
+    document.getElementById("tdUnit").value = unit;
+  }
+}
+
+function closeTestDrive() {
+  document.getElementById("testDriveModal").style.display = "none";
+}
+
+function kirimTestDrive(){
+  let nama = document.getElementById("tdNama").value;
+  let unit = document.getElementById("tdUnit").value;
+  let tanggal = document.getElementById("tdTanggal").value;
+  let lokasi = document.getElementById("tdLokasi").value;
+
+  let pesan = `Halo Pak Ardi,%0A
+Saya ingin booking test drive.%0A%0A
+Nama: ${nama}%0A
+Unit: ${unit}%0A
+Tanggal: ${tanggal}%0A
+Lokasi: ${lokasi}`;
+
+  window.open(`https://wa.me/6287772805133?text=${pesan}`, '_blank');
+}
+</script>
 </body>
 </html>

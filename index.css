@@ -40,10 +40,11 @@ header{
 
 /* HAMBURGER ICON */
 .menu-toggle{
-  display:none;
-  font-size:24px;
-  cursor:pointer;
-  z-index:4000;
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+    position: relative;
+    z-index: 5000;
 }
 
 /* MOBILE */
@@ -55,19 +56,23 @@ header{
 /* ================= SIDE MENU ================= */
 
 .side-menu{
-  position: fixed;
-  top: 0;
-  right: -260px;
-  width: 240px;
-  height: 100%;
-  background: #061421;
-  padding: 20px;
-  transition: 0.3s ease;
-  z-index: 3500;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
+    background: #061421;
+    padding: 70px 20px;
+    transition: 0.3s ease;
+    z-index: 4000;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.6);
+}
+header{
+    position: relative;
+    z-index: 3000;
 }
 
 .side-menu.active{
@@ -122,18 +127,22 @@ header{
 .hero {
   position: relative;
   width: 100%;
-  max-width: 1100px;
-  height: 420px;
-  margin: 0 auto;
-  border-radius: 12px;
+  height: 380px;
+  margin: 20px auto 40px;
+  border-radius: 14px;
   overflow: hidden;
 }
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.hero-video{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  min-width:100%;
+  min-height:100%;
+  height:100%;
+  width:auto;
+  object-fit:cover;
+  z-index:0;
 }
 
 .hero-overlay {

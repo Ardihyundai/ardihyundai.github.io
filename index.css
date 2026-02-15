@@ -15,7 +15,7 @@ header{
   background:#081826;
   position:sticky;
   top:0;
-  z-index:3000;
+  z-index:6000;
 }
 
 .logo{height:26px;}
@@ -44,7 +44,7 @@ header{
     font-size:26px;
     cursor:pointer;
     position: relative;
-    z-index: 5000;
+    z-index: 6500;
 }
 
 /* MOBILE */
@@ -58,21 +58,20 @@ header{
 .side-menu{
     position: fixed;
     top: 0;
-    right: -260px;
+    right: -100%;
     width: 260px;
     height: 100vh;
     background: #061421;
-    padding: 70px 20px;
-    transition: 0.3s ease;
-    z-index: 4000;
+    padding: 80px 25px;
+    transition: right 0.3s ease;
+    z-index: 6000;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.6);
+    gap: 18px;
 }
 header{
     position: relative;
-    z-index: 3000;
+    z-index: 5500;
 }
 
 .side-menu.active{
@@ -115,7 +114,7 @@ header{
   inset:0;
   background:rgba(0,0,0,0.5);
   display:none;
-  z-index:3000;
+  z-index:5500;
 }
 
 .menu-overlay.active{
@@ -127,34 +126,34 @@ header{
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .hero-video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: cover;
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
 }
 
 .hero-content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
+    position: relative;
     z-index: 2;
+    text-align: center;
+    max-width: 500px;
+    padding: 20px;
 }
 
 .hero h1{

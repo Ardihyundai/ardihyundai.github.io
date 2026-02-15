@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hyundai Cirebon Official | Ardi Sales Consultant</title>
 
-<meta name="description" content="Dealer Hyundai Cirebon resmi. Promo terbaru 2026, DP ringan, kredit cepat. Hubungi Ardi Hyundai Cirebon sekarang.">
+<title>Dealer Hyundai Cirebon Resmi | Ardi Hyundai</title>
+
+<meta name="description" content="Dealer Hyundai Cirebon resmi. Promo Hyundai 2026, DP ringan, kredit cepat, test drive home visit. Hubungi Ardi Hyundai sekarang.">
+
+<meta name="keywords" content="Hyundai Cirebon, Dealer Hyundai Cirebon, Promo Hyundai 2026, Kredit Hyundai, Test Drive Hyundai">
+
+<meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="index.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -23,12 +28,11 @@
   </div>
 
   <nav class="nav-desktop">
-    <a href="index.html">Home</a>
     <a href="lineup.html">Lineup</a>
-    <a href="contact.html">Contact</a>
-    <button onclick="openTestDrive()" class="btn-testdrive">
-      Booking Test Drive
-    </button>
+    <a href="#simulasi">Simulasi Kredit</a>
+    <a href="#" onclick="openTestDrive()">Test Drive</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="contact.html">Kontak</a>
   </nav>
 
   <div class="menu-toggle" onclick="openMenu()">☰</div>
@@ -38,14 +42,24 @@
 
 <div class="side-menu" id="sideMenu">
   <div class="close-btn" onclick="closeMenu()">✕</div>
-  <a href="index.html">Home</a>
+
   <a href="lineup.html">Lineup</a>
-  <a href="contact.html">Contact</a>
+  <a href="promo-hyundai-cirebon-2026.html">Promo</a>
+  <a href="#simulasi" onclick="closeMenu()">Simulasi Kredit</a>
+  <a href="#" onclick="openTestDrive(); closeMenu();">Test Drive</a>
+  <a href="tentang.html">Tentang Kami</a>
+  <a href="contact.html">Kontak</a>
+
+  <div class="menu-footer">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="harga-hyundai-cirebon.html">Harga Terbaru</a>
+    <a href="dealer-hyundai-cirebon.html">Dealer Resmi</a>
+  </div>
 </div>
 
 <section class="hero">
-  <h1>Hyundai Cirebon Official</h1>
-  <p>DP Ringan • Promo 2026 • Approval Cepat</p>
+  <h1>Dealer Hyundai Cirebon Resmi</h1>
+  <p>DP Ringan • Promo 2026 • Approval Cepat • Home Visit Test Drive</p>
 
   <div class="cta-group">
     <button onclick="openTestDrive()" class="btn-primary">
@@ -58,45 +72,7 @@
   </div>
 </section>
 
-<!-- Floating CTA -->
-<div class="floating-cta">
-  <button onclick="openTestDrive()">Book Test Drive</button>
-</div>
-
-<!-- TEST DRIVE MODAL -->
-<div id="testDriveModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeTestDrive()">×</span>
-
-    <h2>Schedule Test Drive</h2>
-
-    <input type="text" id="tdNama" placeholder="Full Name">
-    <input type="tel" id="tdTelp" placeholder="Phone / WhatsApp">
-
-    <select id="tdUnit">
-      <option value="">Select Model</option>
-      <option>Stargazer</option>
-      <option>Stargazer Cartenz</option>
-      <option>Creta</option>
-      <option>Kona EV</option>
-      <option>Ioniq 5</option>
-      <option>Santa Fe</option>
-      <option>Palisade</option>
-    </select>
-
-    <input type="date" id="tdTanggal">
-
-    <select id="tdLokasi">
-      <option value="">Location</option>
-      <option>Home Visit</option>
-      <option>Dealer</option>
-    </select>
-
-    <button onclick="kirimTestDrive()">Submit</button>
-  </div>
-</div>
-
- <section class="simulasi-section" id="simulasi">
+<section class="simulasi-section" id="simulasi">
   <h2>Simulasi Kredit Hyundai</h2>
 
   <input type="number" id="harga" placeholder="Harga OTR">
@@ -114,6 +90,40 @@
 
   <div class="hasil" id="hasil"></div>
 </section>
+
+<!-- TEST DRIVE MODAL -->
+<div id="testDriveModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeTestDrive()">×</span>
+
+    <h2>Booking Test Drive</h2>
+
+    <input type="text" id="tdNama" placeholder="Nama Lengkap">
+    <input type="tel" id="tdTelp" placeholder="No WhatsApp">
+
+    <select id="tdUnit">
+      <option value="">Pilih Unit</option>
+      <option>Stargazer</option>
+      <option>Stargazer Cartenz</option>
+      <option>Creta</option>
+      <option>Kona EV</option>
+      <option>Ioniq 5</option>
+      <option>Santa Fe</option>
+      <option>Palisade</option>
+    </select>
+
+    <input type="date" id="tdTanggal">
+
+    <select id="tdLokasi">
+      <option value="">Lokasi Test Drive</option>
+      <option>Home Visit</option>
+      <option>Dealer</option>
+    </select>
+
+    <button onclick="kirimTestDrive()">Kirim Sekarang</button>
+  </div>
+</div>
+
 <script src="global.js"></script>
 
 </body>

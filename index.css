@@ -15,7 +15,7 @@ header{
   background:#081826;
   position:sticky;
   top:0;
-  z-index:6000;
+  z-index:5000;
 }
 
 .logo{height:26px;}
@@ -43,8 +43,8 @@ header{
     display:none;
     font-size:26px;
     cursor:pointer;
-    position: relative;
-    z-index: 6500;
+    position:relative;
+    z-index:7000;
 }
 
 /* MOBILE */
@@ -69,10 +69,7 @@ header{
     flex-direction: column;
     gap: 18px;
 }
-header{
-    position: relative;
-    z-index: 5500;
-}
+
 
 .side-menu.active{
   right:0;

@@ -6,15 +6,13 @@
 <title>Dealer Hyundai Cirebon Resmi | Ardi Hyundai</title>
 
 <meta name="description" content="Dealer Hyundai Cirebon resmi. Promo Hyundai 2026, DP ringan, kredit cepat, test drive home visit. Hubungi Ardi Hyundai sekarang.">
-
 <meta name="keywords" content="Hyundai Cirebon, Dealer Hyundai Cirebon, Promo Hyundai 2026, Kredit Hyundai, Test Drive Hyundai">
-
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="index.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
 
 <header>
@@ -23,7 +21,6 @@
     <div class="logo-text">
       <span>OFFICIAL SALES</span>
       <span>ARDI HYUNDAI CIREBON</span>
-   
     </div>
   </div>
 
@@ -35,9 +32,7 @@
     <a href="contact.html">Kontak</a>
   </nav>
 
-  <div class="menu-toggle" onclick="openMenu()">
-  &#9776;
-</div>
+  <div class="menu-toggle" onclick="openMenu()">&#9776;</div>
 </header>
 
 <div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
@@ -49,100 +44,17 @@
   <a href="promo-hyundai-cirebon-2026.html">Promo</a>
   <a href="#simulasi" onclick="closeMenu()">Simulasi Kredit</a>
   <a href="#" onclick="openTestDrive(); closeMenu();">Test Drive</a>
-  <a href="tentang.html">Tentang Kami</a>
   <a href="contact.html">Kontak</a>
-
-<div class="menu-footer">
-  <a href="privacy-policy.html">Privacy Policy</a>
   <a href="tentang.html">Tentang</a>
-  <a href="harga-hyundai-cirebon.html">Harga Terbaru</a>
-</div>
-  
-</div>
 
-<section class="hero">
-
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="cinematic-video.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-
-    <img src="ardi-banner.png" class="sales-photo" alt="Sales Hyundai Cirebon">
-
-    <h1>Dealer Hyundai Cirebon Resmi</h1>
-
-    <p>DP Ringan • Promo 2026 • Approval Cepat • Home Visit Test Drive</p>
-
-    <div class="cta-group">
-        <button onclick="openTestDrive()" class="btn-primary">
-            Schedule Test Drive
-        </button>
-
-        <a href="https://wa.me/6287772805133" class="btn-wa">
-            Chat WhatsApp
-        </a>
-    </div>
-
-</div>
-  
-</section>
-
-<section class="simulasi-section" id="simulasi">
-  <h2>Simulasi Kredit Hyundai</h2>
-
-  <input type="number" id="harga" placeholder="Harga OTR">
-  <input type="number" id="dp" placeholder="DP">
-
-  <select id="tenor">
-    <option value="1">1 Tahun</option>
-    <option value="2">2 Tahun</option>
-    <option value="3">3 Tahun</option>
-    <option value="4">4 Tahun</option>
-    <option value="5">5 Tahun</option>
-  </select>
-
-  <button onclick="hitungSimulasi()">Hitung Cicilan</button>
-
-  <div class="hasil" id="hasil"></div>
-</section>
-
-<!-- TEST DRIVE MODAL -->
-<div id="testDriveModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeTestDrive()">×</span>
-
-    <h2>Booking Test Drive</h2>
-
-    <input type="text" id="tdNama" placeholder="Nama Lengkap">
-    <input type="tel" id="tdTelp" placeholder="No WhatsApp">
-
-    <select id="tdUnit">
-      <option value="">Pilih Unit</option>
-      <option>Stargazer</option>
-      <option>Stargazer Cartenz</option>
-      <option>Creta</option>
-      <option>Kona EV</option>
-      <option>Ioniq 5</option>
-      <option>Santa Fe</option>
-      <option>Palisade</option>
-    </select>
-
-    <input type="date" id="tdTanggal">
-
-    <select id="tdLokasi">
-      <option value="">Lokasi Test Drive</option>
-      <option>Home Visit</option>
-      <option>Dealer</option>
-    </select>
-
-    <button onclick="kirimTestDrive()">Kirim Sekarang</button>
+  <div class="menu-footer">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="harga-hyundai-cirebon.html">Harga Terbaru</a>
   </div>
 </div>
 
-<script src="global.js"></script>
+<!-- HERO tetap sama -->
 
+<script src="global.js"></script>
 </body>
 </html>

@@ -2,12 +2,8 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dealer Hyundai Cirebon Resmi | Ardi Hyundai</title>
-
-<meta name="description" content="Dealer Hyundai Cirebon resmi. Promo Hyundai 2026, DP ringan, kredit cepat, test drive home visit. Hubungi Ardi Hyundai sekarang.">
-<meta name="keywords" content="Hyundai Cirebon, Dealer Hyundai Cirebon, Promo Hyundai 2026, Kredit Hyundai, Test Drive Hyundai">
-<meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="index.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -16,46 +12,86 @@
 <body>
 
 <header>
-  <div class="logo-wrap">
-    <img src="hyundai-logo.png" class="logo">
-    <div class="logo-text">
-      <span>OFFICIAL SALES</span>
-      <span>ARDI HYUNDAI CIREBON</span>
-    </div>
-  </div>
+<div class="logo-wrap">
+<img src="hyundai-logo.png" class="logo">
+<div>
+<div>OFFICIAL SALES</div>
+<div>ARDI HYUNDAI CIREBON</div>
+</div>
+</div>
 
-  <nav class="nav-desktop">
-    <a href="lineup.html">Lineup</a>
-    <a href="#simulasi">Simulasi Kredit</a>
-    <a href="#" onclick="openTestDrive()">Test Drive</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="contact.html">Kontak</a>
-  </nav>
-
-  <div class="menu-toggle" onclick="openMenu()">&#9776;</div>
+<div class="menu-toggle" onclick="openMenu()">☰</div>
 </header>
 
+<!-- OVERLAY -->
 <div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
 
+<!-- SIDE MENU -->
 <div class="side-menu" id="sideMenu">
 
-  <div class="close-btn" onclick="closeMenu()">✕</div>
+<div class="close-btn" onclick="closeMenu()">×</div>
 
-  <a href="lineup.html">Lineup</a>
-  <a href="promo-hyundai-cirebon-2026.html">Promo</a>
-  <a href="#simulasi" onclick="closeMenu()">Simulasi Kredit</a>
-  <a href="#" onclick="openTestDrive(); closeMenu();">Test Drive</a>
-  <a href="contact.html">Kontak</a>
-  <a href="tentang.html">Tentang</a>
+<a href="lineup.html">Lineup</a>
+<a href="promo-hyundai-cirebon-2026.html">Promo</a>
+<a href="#" onclick="openSimulasi();closeMenu()">Simulasi Kredit</a>
+<a href="#" onclick="openTestDrive();closeMenu()">Test Drive</a>
+<a href="tentang.html">Tentang Kami</a>
+<a href="contact.html">Kontak</a>
 
-  <div class="menu-footer">
-    <a href="privacy-policy.html" class="small-link">Privacy Policy</a>
-  </div>
+<div class="menu-footer">
+<a href="privacy-policy.html">Privacy Policy</a>
+</div>
 
 </div>
 
-<!-- HERO tetap sama -->
+<!-- HERO SECTION -->
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="cinematic-video.mp4" type="video/mp4">
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+<img src="ardi-banner.png">
+<h1>Dealer Hyundai Cirebon Resmi</h1>
+<p>DP Ringan • Promo 2026 • Approval Cepat</p>
+<button class="btn-primary" onclick="openTestDrive()">Schedule Test Drive</button>
+</div>
+
+</section>
+
+<!-- MODAL SIMULASI -->
+<div class="modal" id="simulasiModal">
+<div class="modal-content">
+<h3>Simulasi Kredit</h3>
+<input type="number" placeholder="Harga Mobil">
+<input type="number" placeholder="DP">
+<select>
+<option>1 Tahun</option>
+<option>2 Tahun</option>
+<option>3 Tahun</option>
+<option>4 Tahun</option>
+<option>5 Tahun</option>
+</select>
+<button onclick="closeSimulasi()">Tutup</button>
+</div>
+</div>
+
+<!-- MODAL TEST DRIVE -->
+<div class="modal" id="testDriveModal">
+<div class="modal-content">
+<h3>Form Test Drive</h3>
+<input type="text" placeholder="Nama">
+<input type="tel" placeholder="No HP">
+<input type="date">
+<button>Kirim</button>
+<button onclick="closeTestDrive()">Tutup</button>
+</div>
+</div>
 
 <script src="global.js"></script>
+
 </body>
 </html>

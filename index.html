@@ -65,16 +65,18 @@
 <div class="modal" id="simulasiModal">
 <div class="modal-content">
 <h3>Simulasi Kredit</h3>
-<input type="number" placeholder="Harga Mobil">
-<input type="number" placeholder="DP">
-<select>
-<option>1 Tahun</option>
-<option>2 Tahun</option>
-<option>3 Tahun</option>
-<option>4 Tahun</option>
-<option>5 Tahun</option>
+<input type="number" id="harga" placeholder="Harga Mobil">
+<input type="number" id="dp" placeholder="DP">
+
+<select id="tenor">
+  <option value="1">1 Tahun</option>
+  <option value="2">2 Tahun</option>
+  <option value="3">3 Tahun</option>
+  <option value="4">4 Tahun</option>
+  <option value="5">5 Tahun</option>
 </select>
-<div id="hasilSimulasi" style="margin:10px 0;color:#fff;"></div>
+
+<div id="hasil" style="margin:10px 0;color:#fff;"></div>
 
 <button onclick="hitungSimulasi()">Hitung</button>
 <button onclick="closeSimulasi()">Tutup</button>
@@ -82,13 +84,21 @@
 </div>
 
 <!-- MODAL TEST DRIVE -->
-<div class="modal" id="testDriveModal">
+  <div class="modal" id="testDriveModal">
 <div class="modal-content">
 <h3>Form Test Drive</h3>
-<input type="text" placeholder="Nama">
-<input type="tel" placeholder="No HP">
-<input type="date">
-<button>Kirim</button>
+<input type="text" id="tdNama" placeholder="Nama">
+<input type="tel" id="tdTelp" placeholder="No HP">
+<input type="text" id="tdAlamat" placeholder="Alamat">
+<input type="date" id="tdTanggal">
+
+<select id="tdLokasi">
+  <option value="">Pilih Lokasi</option>
+  <option value="Rumah">Rumah</option>
+  <option value="Dealer">Dealer</option>
+<select>
+
+<button onclick="kirimTestDrive()">Kirim</button>
 <button onclick="closeTestDrive()">Tutup</button>
 </div>
 </div>

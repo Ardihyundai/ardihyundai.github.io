@@ -30,15 +30,29 @@ function closeMenu(){
 /* =====================================
    FILTER MODEL (LINEUP)
 ===================================== */
+function toggleMenu(){
+    const menu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("overlay");
+
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        document.body.style.overflow="hidden";
+    }else{
+        document.body.style.overflow="auto";
+    }
+}
+
 
 function filterModel(model){
-    const cards = document.querySelectorAll(".car-card");
+    const cards = document.querySelectorAll(".car-block");
 
     cards.forEach(card=>{
         if(model === "all"){
             card.style.display = "block";
         }else{
-            if(card.dataset.model === model){
+            if(card.classList.contains(model)){
                 card.style.display = "block";
             }else{
                 card.style.display = "none";
@@ -70,10 +84,11 @@ function closeSimulasi(){
 }
 
 function hitungSimulasi(){
-    let harga = parseInt(document.getElementById("harga").value);
-    let dp = parseInt(document.getElementById("dp").value);
-    let tenor = parseInt(document.getElementById("tenor").value);
+    let harga = parseInt(document.getElementById("hargaOTR").value);
+let dpPersen = parseInt(document.getElementById("dpPersen").value);
+let tenor = parseInt(document.getElementById("tenor").value);
 
+let dp = harga * dpPersen / 100;
     if(!harga || !dp || !tenor){
         alert("Lengkapi semua data!");
         return;
@@ -84,7 +99,7 @@ function hitungSimulasi(){
     let total = pokok + bunga;
     let cicilan = total / (tenor * 12);
 
-    document.getElementById("hasil").innerHTML =
+    document.getElementById("hasilCicilan").innerHTML =
         "Estimasi Cicilan: Rp " +
         Math.round(cicilan).toLocaleString("id-ID") +
         " / bulan";
@@ -206,7 +221,7 @@ Mohon konfirmasi pembayaran setelah transfer.`;
 ===================================== */
 
 window.addEventListener("scroll", ()=>{
-    const cards = document.querySelectorAll(".car-card");
+    const cards = document.querySelectorAll(".car-block");
 
     cards.forEach(card=>{
         const rect = card.getBoundingClientRect();

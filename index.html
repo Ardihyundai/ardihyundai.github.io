@@ -102,5 +102,27 @@
     <a href="privacy-policy.html">Privacy Policy</a>
 </footer>
 
+    <div id="simulasiModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeSimulasi()" class="close">×</span>
+
+    <h2>Simulasi Kredit</h2>
+    <p id="simUnit"></p>
+
+    <input type="number" id="hargaOTR" placeholder="Harga OTR">
+    <input type="number" id="dpPersen" placeholder="DP %">
+    <select id="tenor">
+      <option value="1">1 Tahun</option>
+      <option value="2">2 Tahun</option>
+      <option value="3">3 Tahun</option>
+      <option value="4">4 Tahun</option>
+      <option value="5">5 Tahun</option>
+    </select>
+
+    <button onclick="hitungSimulasi()">Hitung</button>
+    <div id="hasilCicilan"></div>
+
+  </div>
+</div>
 </body>
 </html>

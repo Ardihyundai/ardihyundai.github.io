@@ -177,3 +177,26 @@ header {
     font-size:20px;
     color:white;
 }
+
+/* FIX HAMBURGER GLOBAL */
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+@media(max-width:900px){
+  .hamburger{
+    display: block;
+  }
+}
+
+header{
+  padding: 15px 15px;
+}
+
+.hamburger{
+  margin-right: 5px;
+}

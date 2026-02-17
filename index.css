@@ -244,7 +244,7 @@ font-size:14px;
   cursor: pointer;
 
   position: absolute;
-  right: 15px;   /* atur jarak dari kanan */
+  right: 30px;   /* atur jarak dari kanan */
   top: 50%;
   transform: translateY(-50%);
 }

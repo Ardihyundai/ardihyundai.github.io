@@ -235,12 +235,13 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const accButtons = document.querySelectorAll(".accordion-btn, .btn-type");
+  const buttons = document.querySelectorAll(".accordion-btn");
 
-  accButtons.forEach(button => {
-    button.addEventListener("click", function () {
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", function () {
 
-      const content = this.nextElementSibling;
+      const parent = this.closest(".car-block");
+      const content = parent.querySelector(".accordion-content");
 
       if (!content) return;
 

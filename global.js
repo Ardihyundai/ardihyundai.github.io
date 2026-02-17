@@ -295,5 +295,22 @@ const overlay = document.getElementById("overlay");
 menu.classList.toggle("active");
 overlay.classList.toggle("active");
 }
+
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.car-block').forEach(block => {
+    const rect = block.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      block.classList.add('show');
+    }
+
+     <button onclick="openSimulasi('Stargazer Active MT', 259700000)" class="btn-sim">Simulasi Kredit</button>
+  
+function openSimulasi(unit, harga) {
+  document.getElementById('simUnit').value = unit;
+  document.getElementById('simHarga').value = harga;
+  document.getElementById('simulasiPopup').style.display = 'flex';
+}
+
+       
     });
 });

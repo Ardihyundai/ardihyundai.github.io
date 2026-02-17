@@ -468,3 +468,69 @@ text-decoration:none;
 .btn-sim{background:#00c3ff;color:#000;}
 .btn-test{background:#222;color:#fff;border:1px solid #00c3ff;}
 .btn-spk{background:#00ff88;color:#000;}
+
+.car-block {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.car-block.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.filter-bar {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #00bfff;
+  color: #00bfff;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #00bfff;
+  color: #000;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.badge.best {
+  background: gold;
+  color: black;
+}
+
+.badge.ev {
+  background: #00ff99;
+  color: black;
+}
+
+.badge.premium {
+  background: #111;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.stargazer h2 { color: #00bfff; }
+.cartenz h2 { color: #00e1ff; }
+.creta h2 { color: #ff4d4d; }
+.kona h2 { color: #00ff99; }
+.ioniq h2 { color: #66ffff; }
+.santafe h2 { color: #ffaa00; }
+.palisade h2 { color: #ffffff; }

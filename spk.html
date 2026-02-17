@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPK Hyundai Cirebon</title>
+<link rel="stylesheet" href="spk.css">
+</head>
+
+<body>
+
+<div class="spk-container">
+
+<h1>SURAT PESANAN KENDARAAN</h1>
+<h3>PT. Mulya Putra Citramobil – Hyundai Cirebon</h3>
+
+<hr>
+
+<h2>DATA PEMBELI</h2>
+
+<input type="text" id="nama" placeholder="Nama Lengkap">
+<input type="text" id="alamat" placeholder="Alamat">
+<input type="text" id="telp" placeholder="No Telepon">
+
+<h2>DATA KENDARAAN</h2>
+
+<select id="unit">
+<option>Stargazer</option>
+<option>Stargazer Cartenz</option>
+<option>Creta</option>
+<option>Kona EV</option>
+<option>Ioniq 5</option>
+<option>Santa Fe</option>
+<option>Palisade</option>
+</select>
+
+<input type="text" id="type" placeholder="Type Unit">
+<input type="text" id="warna" placeholder="Warna">
+<input type="number" id="harga" placeholder="Harga OTR">
+
+<h2>PEMBAYARAN</h2>
+
+<select id="pembayaran">
+<option>Tunai</option>
+<option>Kredit</option>
+</select>
+
+<input type="number" id="dp" placeholder="DP (%)">
+<input type="number" id="tenor" placeholder="Tenor (tahun)">
+
+<button onclick="kirimSPK()" class="btn-spk">Kirim SPK ke WhatsApp</button>
+
+</div>
+
+<script>
+function kirimSPK(){
+
+let nama = document.getElementById("nama").value;
+let alamat = document.getElementById("alamat").value;
+let telp = document.getElementById("telp").value;
+let unit = document.getElementById("unit").value;
+let type = document.getElementById("type").value;
+let warna = document.getElementById("warna").value;
+let harga = document.getElementById("harga").value;
+let pembayaran = document.getElementById("pembayaran").value;
+let dp = document.getElementById("dp").value;
+let tenor = document.getElementById("tenor").value;
+
+let pesan = `Halo Ardi Hyundai,%0A
+Saya ingin SPK:%0A
+Nama: ${nama}%0A
+Alamat: ${alamat}%0A
+Telp: ${telp}%0A
+Unit: ${unit}%0A
+Type: ${type}%0A
+Warna: ${warna}%0A
+Harga OTR: Rp ${harga}%0A
+Pembayaran: ${pembayaran}%0A
+DP: ${dp}%0A
+Tenor: ${tenor}`;
+
+window.open(`https://wa.me/6287772805133?text=${pesan}`);
+}
+</script>
+
+</body>
+</html>

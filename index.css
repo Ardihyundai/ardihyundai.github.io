@@ -380,17 +380,12 @@ header{
 
 /* ===== FOOTER FIX PREMIUM ===== */
 .main-footer{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
     background:#081826;
-    border-top:3px solid #e10600; /* garis merah */
+    border-top:3px solid #e10600;
     text-align:center;
-    padding:12px 10px;
-    font-size:13px;
-    color:#ccc;
-    letter-spacing:0.5px;
+    padding:12px;
+    font-size:12px;
+    color:#aaa;
 }
 
 .hero-avatar{

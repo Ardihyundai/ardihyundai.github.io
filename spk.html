@@ -4,84 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPK Hyundai Cirebon</title>
-<link rel="stylesheet" href="spk.css">
-</head>
+<link rel="stylesheet" href="style.css">
+<script src="global.js" defer></script>
 
+<style>
+body{
+    background:#0f172a;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    margin:0;
+}
+.spk-container{
+    max-width:800px;
+    margin:40px auto;
+    background:#111827;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+h1{
+    text-align:center;
+    margin-bottom:5px;
+}
+.subtitle{
+    text-align:center;
+    opacity:0.7;
+    margin-bottom:30px;
+}
+.section-title{
+    margin-top:30px;
+    margin-bottom:10px;
+    border-bottom:1px solid #334155;
+    padding-bottom:5px;
+}
+input, select{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:6px;
+    border:none;
+}
+.btn-primary{
+    background:#00bfff;
+    color:#000;
+    font-weight:bold;
+    padding:12px;
+    border:none;
+    width:100%;
+    border-radius:6px;
+    cursor:pointer;
+}
+.bank-box{
+    background:#0b1220;
+    padding:15px;
+    border-radius:8px;
+    margin-top:15px;
+    font-size:14px;
+}
+</style>
+</head>
 <body>
 
 <div class="spk-container">
 
 <h1>SURAT PESANAN KENDARAAN</h1>
-<h3>PT. Mulya Putra Citramobil – Hyundai Cirebon</h3>
+<div class="subtitle">PT. Mulya Putra Citramobil – Hyundai Cirebon</div>
 
-<hr>
-
-<h2>DATA PEMBELI</h2>
-
+<!-- DATA PEMBELI -->
+<div class="section-title">DATA PEMBELI</div>
 <input type="text" id="nama" placeholder="Nama Lengkap">
 <input type="text" id="alamat" placeholder="Alamat">
-<input type="text" id="telp" placeholder="No Telepon">
+<input type="text" id="hp" placeholder="No Telepon">
 
-<h2>DATA KENDARAAN</h2>
+<!-- DATA KENDARAAN -->
+<div class="section-title">DATA KENDARAAN</div>
 
-<select id="unit">
-<option>Stargazer</option>
-<option>Stargazer Cartenz</option>
-<option>Creta</option>
-<option>Kona EV</option>
-<option>Ioniq 5</option>
-<option>Santa Fe</option>
-<option>Palisade</option>
+<select id="unit" onchange="loadTypeSPK()">
+<option value="">Pilih Unit</option>
+<option value="Stargazer">Stargazer</option>
+<option value="Stargazer Cartenz">Stargazer Cartenz</option>
+<option value="Creta">Creta</option>
+<option value="Kona EV">Kona EV</option>
+<option value="IONIQ 5">IONIQ 5</option>
+<option value="Santa Fe">Santa Fe</option>
+<option value="Palisade">Palisade</option>
 </select>
 
-<input type="text" id="type" placeholder="Type Unit">
+<select id="type" onchange="setOTR()">
+<option value="">Pilih Type</option>
+</select>
+
 <input type="text" id="warna" placeholder="Warna">
-<input type="number" id="harga" placeholder="Harga OTR">
 
-<h2>PEMBAYARAN</h2>
+<input type="text" id="otr" placeholder="Harga OTR" readonly>
 
-<select id="pembayaran">
-<option>Tunai</option>
-<option>Kredit</option>
+<!-- PEMBAYARAN -->
+<div class="section-title">PEMBAYARAN</div>
+
+<select id="metode">
+<option value="Tunai">Tunai</option>
+<option value="Kredit">Kredit</option>
 </select>
 
 <input type="number" id="dp" placeholder="DP (%)">
 <input type="number" id="tenor" placeholder="Tenor (tahun)">
 
-<button onclick="kirimSPK()" class="btn-spk">Kirim SPK ke WhatsApp</button>
+<div class="section-title">REKENING PEMBAYARAN</div>
 
+<select id="bank">
+<option value="">Pilih Bank</option>
+<option>Bank Mandiri - 1340000009877</option>
+<option>Bank BCA - 1341737007</option>
+<option>Bank Permata - 7601009808</option>
+</select>
+
+<div class="bank-box">
+Semua rekening atas nama:<br>
+<b>PT. Mulya Putra Citramobil</b>
 </div>
 
-<script>
-function kirimSPK(){
+<br>
+<button class="btn-primary" onclick="kirimSPK()">Kirim SPK ke WhatsApp</button>
 
-let nama = document.getElementById("nama").value;
-let alamat = document.getElementById("alamat").value;
-let telp = document.getElementById("telp").value;
-let unit = document.getElementById("unit").value;
-let type = document.getElementById("type").value;
-let warna = document.getElementById("warna").value;
-let harga = document.getElementById("harga").value;
-let pembayaran = document.getElementById("pembayaran").value;
-let dp = document.getElementById("dp").value;
-let tenor = document.getElementById("tenor").value;
-
-let pesan = `Halo Ardi Hyundai,%0A
-Saya ingin SPK:%0A
-Nama: ${nama}%0A
-Alamat: ${alamat}%0A
-Telp: ${telp}%0A
-Unit: ${unit}%0A
-Type: ${type}%0A
-Warna: ${warna}%0A
-Harga OTR: Rp ${harga}%0A
-Pembayaran: ${pembayaran}%0A
-DP: ${dp}%0A
-Tenor: ${tenor}`;
-
-window.open(`https://wa.me/6287772805133?text=${pesan}`);
-}
-</script>
+</div>
 
 </body>
 </html>

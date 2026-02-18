@@ -127,6 +127,114 @@ Semua rekening atas nama:<br>
 <button class="btn-primary" onclick="kirimSPK()">Kirim SPK ke WhatsApp</button>
 
 </div>
+<script>
 
+/* =========================
+   DATA UNIT & TYPE + OTR
+========================= */
+const dataSPK = {
+  "Stargazer": {
+    "Active MT": 259700000,
+    "Active IVT": 273100000
+  },
+  "Stargazer Cartenz": {
+    "Trend MT": 277500000,
+    "Trend IVT": 287750000
+  },
+  "Creta": {
+    "Active": 299700000,
+    "Trend": 321900000
+  },
+  "Kona EV": {
+    "Prime Reguler": 584500000,
+    "Signature Extended": 669550000
+  },
+  "IONIQ 5": {
+    "Prime Reguler": 810000000,
+    "Signature Extended": 926600000
+  },
+  "Santa Fe": {
+    "Prime": 615000000,
+    "Signature": 695000000
+  },
+  "Palisade": {
+    "Prime": 875000000,
+    "Signature AWD": 1025000000
+  }
+};
+
+/* =========================
+   LOAD TYPE BERDASARKAN UNIT
+========================= */
+function loadTypeSPK(){
+  const unit = document.getElementById("unit").value;
+  const typeSelect = document.getElementById("type");
+
+  typeSelect.innerHTML = '<option value="">Pilih Type</option>';
+
+  if(dataSPK[unit]){
+    for(let type in dataSPK[unit]){
+      let option = document.createElement("option");
+      option.value = type;
+      option.textContent = type;
+      typeSelect.appendChild(option);
+    }
+  }
+
+  document.getElementById("otr").value = "";
+}
+
+/* =========================
+   SET OTR OTOMATIS
+========================= */
+function setOTR(){
+  const unit = document.getElementById("unit").value;
+  const type = document.getElementById("type").value;
+
+  if(dataSPK[unit] && dataSPK[unit][type]){
+    document.getElementById("otr").value =
+      "Rp " + dataSPK[unit][type].toLocaleString("id-ID");
+  }
+}
+
+/* =========================
+   KIRIM KE WHATSAPP
+========================= */
+function kirimSPK(){
+  const nama = document.getElementById("nama").value;
+  const alamat = document.getElementById("alamat").value;
+  const hp = document.getElementById("hp").value;
+  const unit = document.getElementById("unit").value;
+  const type = document.getElementById("type").value;
+  const otr = document.getElementById("otr").value;
+  const bank = document.getElementById("bank").value;
+
+  if(!nama || !unit || !type){
+    alert("Lengkapi data terlebih dahulu!");
+    return;
+  }
+
+  const pesan = 
+`SPK Hyundai Cirebon
+PT. Mulya Putra Citramobil
+
+Nama: ${nama}
+Alamat: ${alamat}
+HP: ${hp}
+
+Unit: ${unit}
+Type: ${type}
+OTR: ${otr}
+
+Bank: ${bank}`;
+
+  window.open(
+    "https://wa.me/6287772805133?text=" +
+    encodeURIComponent(pesan),
+    "_blank"
+  );
+}
+
+</script>
 </body>
 </html>

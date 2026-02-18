@@ -1,38 +1,161 @@
-body{
-margin:0;
-background:#0b1120;
-font-family:Arial;
-color:white;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form SPK - Ardi Hyundai Cirebon</title>
+<link rel="stylesheet" href="style.css">
+<script src="global.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    OFFICIAL SALES<br>
+    ARDI HYUNDAI CIREBON
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="side-menu" id="sideMenu">
+  <a href="index.html" onclick="closeMenu()">HOME</a>
+  <a href="lineup.html" onclick="closeMenu()">LINEUP</a>
+  <a href="#" onclick="openSimulasi(); closeMenu();">SIMULASI KREDIT</a>
+  <a href="#" onclick="openTestDrive(); closeMenu();">TEST DRIVE</a>
+  <a href="spk.html" onclick="closeMenu()">SPK</a>
+</div>
+
+<section class="hero">
+  <h1>FORM SPK PEMBELIAN</h1>
+</section>
+
+<div class="unit-card">
+
+<h3>Data Pembeli</h3>
+<input type="text" id="spkNama" placeholder="Nama Lengkap">
+<input type="text" id="spkAlamat" placeholder="Alamat">
+<input type="text" id="spkHP" placeholder="No. HP">
+
+<h3>Data Unit</h3>
+
+<select id="spkUnit" onchange="loadTypeSPK()">
+  <option value="">Pilih Unit</option>
+  <option value="Stargazer">Stargazer</option>
+  <option value="Stargazer Cartenz">Stargazer Cartenz</option>
+  <option value="Creta">Creta</option>
+  <option value="Kona EV">Kona EV</option>
+  <option value="IONIQ 5">IONIQ 5</option>
+  <option value="Santa Fe">Santa Fe</option>
+  <option value="Palisade">Palisade</option>
+</select>
+
+<select id="spkType" onchange="isiOTRSPK()">
+  <option value="">Pilih Type</option>
+</select>
+
+<input type="number" id="spkOTR" placeholder="Harga OTR">
+
+<h3>Pembayaran</h3>
+
+<input type="number" id="spkDP" placeholder="DP (%)">
+<button class="btn btn-outline" onclick="document.getElementById('spkDP').value=20">DP 20%</button>
+
+<select id="spkTenor">
+  <option value="1">1 Tahun</option>
+  <option value="2">2 Tahun</option>
+  <option value="3">3 Tahun</option>
+  <option value="4">4 Tahun</option>
+  <option value="5">5 Tahun</option>
+</select>
+
+<button class="btn btn-primary" onclick="hitungSPK()">Hitung Angsuran</button>
+
+<div id="hasilSPK" style="margin-top:10px;"></div>
+
+<button class="btn btn-primary" onclick="kirimSPK()">Kirim SPK ke WhatsApp</button>
+
+</div>
+
+<footer>
+© 2026 Ardi Hyundai Cirebon — All Rights Reserved
+</footer>
+
+<script>
+
+/* LOAD TYPE SPK */
+function loadTypeSPK(){
+  const unit = document.getElementById("spkUnit").value;
+  const typeSelect = document.getElementById("spkType");
+  typeSelect.innerHTML = "";
+
+  if(mobilData[unit]){
+    for(let type in mobilData[unit]){
+      let option = document.createElement("option");
+      option.value = type;
+      option.textContent = type;
+      typeSelect.appendChild(option);
+    }
+  }
 }
 
-.spk-container{
-max-width:600px;
-margin:50px auto;
-background:#111827;
-padding:30px;
-border-radius:15px;
-box-shadow:0 0 40px rgba(0,195,255,0.4);
+function isiOTRSPK(){
+  const unit = document.getElementById("spkUnit").value;
+  const type = document.getElementById("spkType").value;
+  document.getElementById("spkOTR").value = mobilData[unit][type];
 }
 
-h1{
-text-align:center;
-color:#00c3ff;
+/* HITUNG SPK BUNGA 5% */
+function hitungSPK(){
+  let harga = parseFloat(document.getElementById("spkOTR").value);
+  let dpPersen = parseFloat(document.getElementById("spkDP").value);
+  let tenor = parseInt(document.getElementById("spkTenor").value);
+
+  if(!harga || !dpPersen || !tenor){
+    document.getElementById("hasilSPK").innerHTML="Lengkapi data!";
+    return;
+  }
+
+  let dp = harga * dpPersen/100;
+  let sisa = harga - dp;
+
+  let bunga = sisa * (0.05 * tenor);
+  let total = sisa + bunga;
+
+  let cicilan = total / (tenor*12);
+
+  document.getElementById("hasilSPK").innerHTML =
+  "DP: Rp " + dp.toLocaleString("id-ID") +
+  "<br>Angsuran/Bulan: Rp " +
+  Math.round(cicilan).toLocaleString("id-ID");
 }
 
-input,select{
-width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:8px;
-border:none;
+/* KIRIM WA */
+function kirimSPK(){
+  let nama = document.getElementById("spkNama").value;
+  let alamat = document.getElementById("spkAlamat").value;
+  let hp = document.getElementById("spkHP").value;
+  let unit = document.getElementById("spkUnit").value;
+  let type = document.getElementById("spkType").value;
+
+  if(!nama || !alamat || !hp || !unit || !type){
+    alert("Lengkapi data!");
+    return;
+  }
+
+  let pesan =
+`Halo Ardi Hyundai,
+
+SPK Baru:
+Nama: ${nama}
+Alamat: ${alamat}
+HP: ${hp}
+Unit: ${unit}
+Type: ${type}`;
+
+  window.open("https://wa.me/6287772805133?text=" + encodeURIComponent(pesan));
 }
 
-.btn-spk{
-background:#00c3ff;
-padding:12px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-margin-top:20px;
-}
+</script>
+
+</body>
+</html>

@@ -91,21 +91,6 @@ function hitungCicilan() {
 
 }
 
-/* =====================================
-   TEST DRIVE
-===================================== */
-
-function openTestDrive(unitNama){
-    const modal = document.getElementById("testDriveModal");
-    if(modal) modal.style.display = "flex";
-
-    document.body.style.overflow = "hidden";
-
-    if(unitNama){
-        document.getElementById("tdUnit").value = unitNama;
-    }
-}
-
 function closeTestDrive(){
     const modal = document.getElementById("testDriveModal");
     if(modal) modal.style.display = "none";

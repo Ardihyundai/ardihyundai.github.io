@@ -1,14 +1,24 @@
 /* ==============================
    HAMBURGER MENU
 ==============================*/
-function toggleMenu() {
-  const menu = document.getElementById("sideMenu");
-  if(menu) menu.classList.toggle("active");
+function openMenu(){
+    document.getElementById("sideMenu").classList.add("active");
+    document.getElementById("menuOverlay").style.display = "block";
 }
 
-function closeMenu() {
-  const menu = document.getElementById("sideMenu");
-  if(menu) menu.classList.remove("active");
+function closeMenu(){
+    document.getElementById("sideMenu").classList.remove("active");
+    document.getElementById("menuOverlay").style.display = "none";
+}
+
+function toggleMenu(){
+    const menu = document.getElementById("sideMenu");
+
+    if(menu.classList.contains("active")){
+        closeMenu();
+    } else {
+        openMenu();
+    }
 }
 
 /* ==============================

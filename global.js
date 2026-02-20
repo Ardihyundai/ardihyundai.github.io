@@ -250,3 +250,30 @@ document.addEventListener("DOMContentLoaded", function(){
     formatRupiahInput(dpInput);
   }
 });
+
+function kirimSimulasiWA(){
+
+  const unit = document.getElementById("unitSelect").value;
+  const type = document.getElementById("typeSelect").value;
+  const harga = document.getElementById("hargaOTR").value;
+  const dp = document.getElementById("dpManual").value;
+  const tenor = document.getElementById("tenor").value;
+  const hasil = document.getElementById("hasilSimulasi").innerText;
+
+  const pesan =
+`Halo Ardi Hyundai 👋
+
+Saya tertarik dengan:
+Unit: ${unit}
+Type: ${type}
+Harga OTR: Rp ${harga}
+DP: Rp ${dp}
+Tenor: ${tenor} Tahun
+
+${hasil}
+
+Mohon info promo terbaik 🙏`;
+
+  const url = "https://wa.me/6287772805133?text=" + encodeURIComponent(pesan);
+  window.open(url, "_blank");
+}

@@ -73,6 +73,15 @@ z-index:2000;
 right:0;
 }
 
+.menu-close{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:22px;
+  cursor:pointer;
+  color:white;
+}
+
 .side-menu a{
 display:block;
 color:#fff;

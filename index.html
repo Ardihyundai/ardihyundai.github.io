@@ -3,46 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ardi Hyundai Cirebon</title>
+<title>Official Sales Ardi Hyundai</title>
+
 <link rel="stylesheet" href="style.css">
 <script src="global.js" defer></script>
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
-  <div class="logo">
-    OFFICIAL SALES<br>
-    ARDI HYUNDAI CIREBON
+  <div class="logo-wrap">
+    <!-- Ganti dengan logo kamu -->
+    <img src="logo.png" alt="Hyundai Logo">
+    <div class="logo-text">
+      <small>Official Sales</small>
+      <strong>Ardi Hyundai</strong>
+    </div>
   </div>
+
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
+<!-- ================= SIDE MENU ================= -->
 <div class="side-menu" id="sideMenu">
-  <a href="lineup.html" onclick="closeMenu()">LINEUP</a>
-  <a href="#" onclick="document.getElementById('modalSimulasi').style.display='flex';closeMenu();">SIMULASI</a>
-  <a href="#" onclick="document.getElementById('modalTestDrive').style.display='flex';closeMenu();">TEST DRIVE</a>
+  <a href="lineup.html" onclick="closeMenu()">Lineup</a>
+  <a href="#" onclick="openSimulasi();closeMenu()">Simulasi Kredit</a>
+  <a href="#" onclick="openTestDrive();closeMenu()">Test Drive</a>
+  <a href="spk.html">SPK</a>
+  <a href="artikel.html">Artikel</a>
+  <a href="dealer.html">Tentang</a>
+  <a href="privacy policy.html">Privacy Policy</a>
 </div>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
   <h1>Dealer Hyundai Cirebon 2026</h1>
-  <p>DP Ringan • Bunga Rendah • Proses Cepat</p>
+  <p>DP Ringan • Bunga 5% • Proses Cepat • Unit Lengkap</p>
 
-  <button class="btn btn-primary" onclick="document.getElementById('modalSimulasi').style.display='flex'">
+  <button class="btn btn-primary" onclick="openSimulasi()">
     Simulasi Kredit
   </button>
 
-  <button class="btn btn-outline" onclick="document.getElementById('modalTestDrive').style.display='flex'">
+  <button class="btn btn-outline" onclick="openTestDrive()">
     Test Drive
   </button>
 </section>
 
-<footer>
-  © 2026 Ardi Hyundai Cirebon
-</footer>
+<!-- ================= MODAL SIMULASI ================= -->
+<div id="modalSimulasi" class="modal">
+  <div class="modal-content">
+    <h3>Kalkulator Simulasi Kredit</h3>
 
-<a href="https://wa.me/6287772805133" class="wa-float">
-Chat WhatsApp
-</a>
+    <select id="unitSelect" onchange="loadType()">
+      <option value="">Pilih Unit</option>
+      <option>Stargazer</option>
+      <option>Stargazer Cartenz</option>
+      <option>Creta</option>
+      <option>Kona EV</option>
+      <option>IONIQ 5</option>
+      <option>Santa Fe</option>
+      <option>Palisade</option>
+    </select>
+
+    <select id="typeSelect" onchange="isiOTR()">
+      <option value="">Pilih Type</option>
+    </select>
+
+    <input type="text" id="hargaOTR" placeholder="Harga OTR" readonly>
+
+    <button class="btn btn-outline" onclick="isiDP20()">
+      DP 20%
+    </button>
+
+    <input type="text" id="dpManual" placeholder="Atau Masukkan DP Manual">
+
+    <select id="tenor">
+      <option value="1">1 Tahun</option>
+      <option value="2">2 Tahun</option>
+      <option value="3">3 Tahun</option>
+      <option value="4">4 Tahun</option>
+      <option value="5">5 Tahun</option>
+    </select>
+
+    <button class="btn btn-primary" onclick="hitungSimulasi()">
+      Hitung Simulasi
+    </button>
+
+    <div id="hasilSimulasi" style="margin-top:10px;"></div>
+
+    <button class="btn btn-success" onclick="closeSimulasi()">
+      Tutup
+    </button>
+  </div>
+</div>
+
+<!-- ================= MODAL TEST DRIVE ================= -->
+<div id="modalTestDrive" class="modal">
+  <div class="modal-content">
+    <h3>Form Booking Test Drive</h3>
+
+    <input type="text" id="tdNama" placeholder="Nama Lengkap">
+    <input type="text" id="tdAlamat" placeholder="Alamat">
+    <input type="text" id="tdHP" placeholder="No HP">
+
+    <select id="tdUnit">
+      <option value="">Pilih Unit</option>
+      <option>Stargazer</option>
+      <option>Stargazer Cartenz</option>
+      <option>Creta</option>
+      <option>Kona EV</option>
+      <option>IONIQ 5</option>
+      <option>Santa Fe</option>
+      <option>Palisade</option>
+    </select>
+
+    <input type="date" id="tdTanggal">
+
+    <select id="tdLokasi">
+      <option value="">Lokasi Test Drive</option>
+      <option value="Rumah">Rumah</option>
+      <option value="Dealer">Dealer</option>
+    </select>
+
+    <button class="btn btn-primary" onclick="kirimTestDrive()">
+      Kirim ke WhatsApp
+    </button>
+
+    <button class="btn btn-outline" onclick="closeTestDrive()">
+      Tutup
+    </button>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2026 Official Sales Ardi Hyundai — All Rights Reserved
+</footer>
 
 </body>
 </html>

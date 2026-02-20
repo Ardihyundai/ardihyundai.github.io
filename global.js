@@ -180,3 +180,19 @@ function toggleMenu(){
 function closeMenu(){
   document.getElementById("sideMenu").classList.remove("active");
 }
+
+function openSimulasi(){
+  document.getElementById("modalSimulasi").style.display="flex";
+}
+
+function closeSimulasi(){
+  document.getElementById("modalSimulasi").style.display="none";
+}
+
+function openTestDrive(){
+  document.getElementById("modalTestDrive").style.display="flex";
+}
+
+function closeTestDrive(){
+  document.getElementById("modalTestDrive").style.display="none";
+}

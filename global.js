@@ -295,7 +295,6 @@ function generatePDF(){
   newWindow.document.write(content);
   newWindow.print();
 }
-}
 function kirimLead(){
 
 fetch("https://script.google.com/macros/s/AKfycbyDfxlYV7fgeozPemJck84dyNBxWkQyikfUWlPYi6Js548vg7CCVtnOy9kcnXrbi4o25A/exec",{

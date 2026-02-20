@@ -323,3 +323,13 @@ window.addEventListener("load", function(){
     loader.style.display = "none";
   }
 });
+document.addEventListener("click", function(e){
+  const menu = document.getElementById("sideMenu");
+  const hamburger = document.querySelector(".hamburger");
+
+  if(menu.classList.contains("active") &&
+     !menu.contains(e.target) &&
+     !hamburger.contains(e.target)){
+      menu.classList.remove("active");
+  }
+});

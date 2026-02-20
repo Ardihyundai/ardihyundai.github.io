@@ -1,133 +1,166 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ardi Hyundai Cirebon</title>
-<link rel="stylesheet" href="style.css">
-<script src="global.js" defer></script>
-</head>
-<body>
-<div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div>
-<!-- ================= HEADER ================= -->
-<header>
-  <div class="logo">
-    <img src="hyundai-logo.png" alt="Hyundai Logo">
-    <div class="logo-text">
-        <span>OFFICIAL SALES</span>
-        <strong>ARDI HYUNDAI CIREBON</strong>
-    </div>
-</div>
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
 
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</header>
+body{
+  background:linear-gradient(135deg,#0b1420,#162b4e);
+  color:white;
+}
 
-<!-- ================= SIDE MENU ================= -->
-<div class="side-menu" id="sideMenu">
-  <a href="lineup.html" onclick="closeMenu()">LINEUP</a>
-  <a href="#" onclick="openSimulasi(); closeMenu();">SIMULASI KREDIT</a>
-  <a href="#" onclick="openTestDrive(); closeMenu();">TEST DRIVE</a>
-  <a href="spk.html" onclick="closeMenu()">SPK</a>
-</div>
+/* HEADER */
+header{
+  background:rgba(13,27,42,0.9);
+  backdrop-filter:blur(10px);
+  padding:15px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <h1>Dealer Hyundai Cirebon 2026</h1>
-  <p>DP ringan • Bunga 5% • Proses cepat • Unit lengkap</p>
+.logo{
+  font-weight:bold;
+  font-size:18px;
+  letter-spacing:1px;
+}
 
-  <button class="btn btn-primary" onclick="openSimulasi()">Simulasi Kredit</button>
-  <button class="btn btn-outline" onclick="openTestDrive()">Test Drive</button>
-</section>
+.hamburger{
+  font-size:26px;
+  cursor:pointer;
+}
 
-<!-- ================= SIMULASI MODAL ================= -->
-<!-- ================= SIMULASI MODAL ================= -->
-<div id="simulasiModal" class="simulasi-overlay">
+/* SIDE MENU */
+.side-menu{
+  position:fixed;
+  right:-260px;
+  top:0;
+  width:260px;
+  height:100%;
+  background:#10243a;
+  padding:30px 20px;
+  transition:0.3s;
+  z-index:1000;
+}
 
-  <div class="simulasi-box">
-    <h2>Simulasi Kredit</h2>
+.side-menu.active{
+  right:0;
+}
 
-    <label>Unit</label>
-    <select id="unitSelect" onchange="loadType()">
-      <option value="">Pilih Unit</option>
-      <option>Stargazer</option>
-      <option>Stargazer Cartenz</option>
-      <option>Creta</option>
-      <option>Kona EV</option>
-      <option>IONIQ 5</option>
-      <option>Santa Fe</option>
-      <option>Palisade</option>
-    </select>
+.side-menu a{
+  display:block;
+  padding:12px 0;
+  border-bottom:1px solid #1f3b57;
+}
 
-    <label>Type</label>
-    <select id="typeSelect" onchange="isiOTR()">
-      <option value="">Pilih Type</option>
-    </select>
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(45deg,#1da1f2,#12d8fa);
+  color:white;
+}
 
-    <label>Harga OTR</label>
-    <input type="text" id="hargaOTR" readonly>
+.hero h1{
+  font-size:36px;
+  margin-bottom:15px;
+}
 
-    <label>DP</label>
-    <select id="dpMode" onchange="setDPMode()">
-      <option value="20">DP 20% (Rekomendasi)</option>
-      <option value="manual">Input Manual</option>
-    </select>
+.hero p{
+  opacity:0.9;
+}
 
-    <input type="text" id="dpInput" placeholder="Masukkan DP Manual" style="display:none;">
+/* BUTTON */
+.btn{
+  padding:10px 22px;
+  margin:10px 5px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    <label>Tenor</label>
-    <select id="tenor">
-      <option value="">Pilih Tenor</option>
-      <option value="1">1 Tahun</option>
-      <option value="2">2 Tahun</option>
-      <option value="3">3 Tahun</option>
-      <option value="4">4 Tahun</option>
-      <option value="5">5 Tahun</option>
-    </select>
+.btn-primary{
+  background:white;
+  color:#1da1f2;
+}
 
-    <button class="btn-hitung" onclick="hitungSimulasi()">Hitung</button>
+.btn-primary:hover{
+  transform:scale(1.05);
+}
 
-    <div id="hasilCicilan" class="hasil-box"></div>
+.btn-outline{
+  border:2px solid white;
+  color:white;
+  background:transparent;
+}
 
-    <p class="disclaimer">
-      *Simulasi ini bukan perhitungan resmi leasing/bank.
-      Angka dapat berubah sesuai kebijakan pembiayaan.*
-    </p>
+.btn-outline:hover{
+  background:white;
+  color:#1da1f2;
+}
 
-    <button class="btn-tutup" onclick="closeSimulasi()">Tutup</button>
-  </div>
-</div>
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
 
-<!-- ================= TEST DRIVE MODAL ================= -->
-<div id="testDriveModal" class="modal">
-  <div class="modal-content">
-    <h3>Form Test Drive</h3>
+.modal-content{
+  background:#10243a;
+  width:90%;
+  max-width:400px;
+  padding:25px;
+  border-radius:15px;
+}
 
-    <input type="text" id="tdNama" placeholder="Nama">
-    <input type="text" id="tdAlamat" placeholder="Alamat">
-    <input type="text" id="tdHP" placeholder="No. HP">
-    <input type="text" id="tdUnit" placeholder="Unit yang diminati">
-    <input type="date" id="tdTanggal">
+.modal-content input,
+.modal-content select{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:8px;
+  border:none;
+}
 
-    <select id="tdLokasi">
-      <option value="">Pilih Lokasi</option>
-      <option value="Rumah">Rumah</option>
-      <option value="Dealer">Dealer</option>
-    </select>
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  background:#0d1b2a;
+  opacity:0.7;
+}
 
-    <button class="btn btn-primary" onclick="kirimTestDrive()">Kirim ke WhatsApp</button>
-    <button class="btn btn-outline" onclick="closeTestDrive()">Tutup</button>
-  </div>
-</div>
+/* FLOAT WA */
+.wa-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
+  z-index:3000;
+}
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  © 2026 Ardi Hyundai Cirebon — All Rights Reserved
-</footer>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/6287772805133" class="wa-float">
-Chat WhatsApp
-</a>
-
-</body>
-</html>
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:26px;
+  }
+}

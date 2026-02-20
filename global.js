@@ -196,3 +196,57 @@ function openTestDrive(){
 function closeTestDrive(){
   document.getElementById("modalTestDrive").style.display="none";
 }
+// ================= LOADING SCREEN =================
+window.addEventListener("load", function(){
+  const loader = document.getElementById("loader");
+  if(loader){
+    loader.style.opacity = "0";
+    setTimeout(()=> loader.style.display="none",500);
+  }
+});
+
+// ================= SCROLL REVEAL =================
+window.addEventListener("scroll", function(){
+  const reveals = document.querySelectorAll(".reveal");
+  for(let i=0;i<reveals.length;i++){
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    if(elementTop < windowHeight - 100){
+      reveals[i].classList.add("active");
+    }
+  }
+});
+
+// ================= COUNTER ANIMATION =================
+function animateCounter(id, target){
+  let count = 0;
+  const speed = 20;
+  const increment = target / 100;
+  const element = document.getElementById(id);
+
+  const update = ()=>{
+    count += increment;
+    if(count < target){
+      element.innerText = Math.floor(count);
+      setTimeout(update,speed);
+    }else{
+      element.innerText = target;
+    }
+  };
+  update();
+}
+
+// ================= FORMAT RUPIAH REALTIME =================
+function formatRupiahInput(input){
+  input.addEventListener("keyup", function(e){
+    let value = this.value.replace(/\D/g,'');
+    this.value = new Intl.NumberFormat("id-ID").format(value);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  const dpInput = document.getElementById("dpManual");
+  if(dpInput){
+    formatRupiahInput(dpInput);
+  }
+});

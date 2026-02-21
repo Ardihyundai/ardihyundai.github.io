@@ -458,21 +458,72 @@ margin:30px 0;
   z-index:2;
 }
 
-/* ===== TYPE ITEM PREMIUM ===== */
+/* ==============================
+   TYPE LIST PREMIUM HYUNDAI
+================================= */
 
-.type-item{
-  display:flex;
-  justify-content:space-between;
-  padding:10px 14px;
-  margin-bottom:8px;
-  border-radius:10px;
-  background:rgba(255,255,255,0.05);
-  transition:0.3s;
+.type-list{
+    margin-top:20px;
 }
 
-.type-item:hover{
-  background:rgba(0,200,255,0.15);
-  transform:translateX(5px);
+.type-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 20px;
+    margin-bottom:14px;
+    border-radius:16px;
+    background:linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.4));
+    border:1px solid rgba(0,200,255,0.25);
+    backdrop-filter:blur(8px);
+    transform:translateY(30px);
+    opacity:0;
+    animation:slideDown 0.6s ease forwards;
+}
+
+.type-item:nth-child(1){ animation-delay:0.1s; }
+.type-item:nth-child(2){ animation-delay:0.2s; }
+.type-item:nth-child(3){ animation-delay:0.3s; }
+.type-item:nth-child(4){ animation-delay:0.4s; }
+.type-item:nth-child(5){ animation-delay:0.5s; }
+.type-item:nth-child(6){ animation-delay:0.6s; }
+.type-item:nth-child(7){ animation-delay:0.7s; }
+.type-item:nth-child(8){ animation-delay:0.8s; }
+.type-item:nth-child(9){ animation-delay:0.9s; }
+
+@keyframes slideDown{
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.type-left{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.type-name{
+    font-weight:600;
+    font-size:14px;
+}
+
+.type-price{
+    font-weight:800;
+    font-size:18px;
+    color:#00eaff;
+    text-shadow:0 0 10px rgba(0,234,255,0.7);
+}
+
+.stock-badge{
+    margin-top:6px;
+    font-size:11px;
+    padding:4px 10px;
+    border-radius:20px;
+    background:linear-gradient(45deg,#00ff87,#00c3ff);
+    color:#000;
+    font-weight:700;
 }
 
 .type-name{

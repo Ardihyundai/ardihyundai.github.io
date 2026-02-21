@@ -306,16 +306,23 @@ color:#000;
   to{opacity:1;transform:scale(1);}
 }
 
-/* ===============================
-   FOOTER
-================================ */
+/* =========================
+   FOOTER FIX HEIGHT
+========================= */
+
 footer{
-text-align:center;
-padding:20px;
-margin-top:40px;
-background:rgba(0,0,0,0.4);
-font-size:14px;
-opacity:0.7;
+    height: 75px;              /* samakan dengan header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    font-size: 14px;
+    background: linear-gradient(90deg, #001f3f, #003366);
+    border-top: 1px solid rgba(0,200,255,0.2);
+}
+
+footer p{
+    margin: 0;
 }
 
 /* ===============================

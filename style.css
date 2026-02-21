@@ -457,3 +457,29 @@ margin:30px 0;
   position:relative;
   z-index:2;
 }
+
+/* ===== TYPE ITEM PREMIUM ===== */
+
+.type-item{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 14px;
+  margin-bottom:8px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+.type-item:hover{
+  background:rgba(0,200,255,0.15);
+  transform:translateX(5px);
+}
+
+.type-name{
+  font-weight:500;
+}
+
+.type-price{
+  font-weight:700;
+  color:#00e0ff;
+}

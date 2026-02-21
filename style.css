@@ -676,29 +676,33 @@ section:last-of-type {
 .privacy-container li{
   margin-bottom:8px;
 }
-/* ===== DESKTOP VERSION ===== */
+/* ===== DESKTOP VERSION FIX ===== */
 @media (min-width: 992px){
 
+  /* Grid lineup jadi 3 kolom */
+  .lineup-container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+  }
+
+  /* Card tidak terlalu besar */
+  .unit-card{
+    max-width:100%;
+    padding:20px;
+  }
+
+  /* Tombol tidak full lebar */
   .btn,
   .btn-primary,
   .btn-outline,
   .btn-wa{
-    width: auto;
-    min-width: 220px;
-    padding: 14px 30px;
-    font-size: 16px;
-  }
-
-  .unit-actions{
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  .unit-card{
-    max-width: 380px;
+    width:100%;
+    max-width:250px;
     margin:auto;
+    display:block;
   }
 
 }

@@ -101,46 +101,6 @@ function formatRupiah(angka){
 }
 
 
-// ===============================
-// LOAD TYPE OTOMATIS
-// ===============================
-function loadType(){
-  const unit = document.getElementById("unitSelect").value;
-  const typeSelect = document.getElementById("typeSelect");
-
-  typeSelect.innerHTML = '<option value="">Pilih Type</option>';
-
-  if(dataMobil[unit]){
-    for(let type in dataMobil[unit]){
-      let option = document.createElement("option");
-      option.value = type;
-      option.textContent = type;
-      typeSelect.appendChild(option);
-    }
-  }
-}
-
-
-/* ===============================
-   DATA HARGA OTR
-================================ */
-
-const hargaData = {
-  "Creta": {
-    "Active MT": 309300000,
-    "Trend IVT": 363150000,
-    "Style IVT": 408850000
-  },
-  "Stargazer": {
-    "Active MT": 259700000,
-    "Prime IVT": 333400000
-  },
-  "Kona EV": {
-    "Prime": 584500000,
-    "Signature": 652650000
-  }
-};
-
 /* ===============================
    LOAD TYPE OTOMATIS
 ================================ */

@@ -750,3 +750,10 @@ footer{
 main.home-no-scroll {
   overflow:hidden;
 }
+
+/* ===== FULLSCREEN HOME NO SCROLL ===== */
+body.home-no-scroll,
+html.home-no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

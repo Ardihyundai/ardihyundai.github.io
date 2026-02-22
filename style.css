@@ -706,3 +706,29 @@ section:last-of-type {
   }
 
 }
+
+.unit-card{
+  background:#0e2a47;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.unit-card img{
+  max-width:100%;
+  margin-bottom:15px;
+}
+
+.unit-actions{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:15px;
+}
+
+.unit-actions .btn{
+  width:100%;
+  border-radius:30px;
+  padding:12px;
+  font-weight:600;
+}

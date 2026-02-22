@@ -677,30 +677,7 @@ section:last-of-type {
   margin-bottom:8px;
 }
 /* ===== DESKTOP VERSION FIX ===== */
-@media (min-width: 992px){
 
-  .lineup{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:30px;
-    max-width:1200px;
-    margin:auto;
-  }
-
-  .unit-actions{
-    flex-direction:column; /* tetap vertikal */
-  }
-
-  .btn,
-  .btn-primary,
-  .btn-outline,
-  .btn-wa{
-    width:100%;
-    max-width:260px;
-    margin:auto;
-  }
-
-}
 
 .unit-card{
   background:#0e2a47;
@@ -726,4 +703,29 @@ section:last-of-type {
   border-radius:30px;
   padding:12px;
   font-weight:600;
+}
+
+@media (min-width: 992px){
+
+  .unit-card{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    gap:30px;
+  }
+
+  .unit-card img,
+  .unit-card h2,
+  .unit-card .badge,
+  .unit-card .btn-outline{
+    grid-column:1;
+  }
+
+  .unit-actions{
+    grid-column:2;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+
 }

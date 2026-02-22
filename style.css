@@ -105,8 +105,13 @@ color:#1fd1ff;
    HERO
 ================================ */
 .hero{
-    text-align:center;
-    padding:40px 20px 20px 20px; 
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
 }
 
 .hero h1{

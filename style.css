@@ -9,8 +9,15 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#071b2f,#0e2f4d);
-color:#fff;
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#071b2f,#0e2f4d);
+  color:#fff;
+
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 /* ===============================
@@ -728,4 +735,12 @@ section:last-of-type {
     gap:15px;
   }
 
+}
+
+main{
+  flex:1;
+}
+
+footer{
+  margin-top:auto;
 }

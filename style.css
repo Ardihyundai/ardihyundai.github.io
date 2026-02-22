@@ -747,13 +747,7 @@ footer{
 }
 /* ================= NO SCROLL HOME ================= */
 
-main.home-no-scroll {
+/* ==== FIX HOME NO SCROLL FINAL ==== */
+body.home-no-scroll{
   overflow:hidden;
-}
-
-/* ===== FULLSCREEN HOME NO SCROLL ===== */
-body.home-no-scroll,
-html.home-no-scroll {
-  overflow: hidden;
-  height: 100vh;
 }

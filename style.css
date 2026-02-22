@@ -748,6 +748,3 @@ footer{
 /* ================= NO SCROLL HOME ================= */
 
 /* ==== FIX HOME NO SCROLL FINAL ==== */
-body.home-no-scroll{
-  overflow:hidden;
-}

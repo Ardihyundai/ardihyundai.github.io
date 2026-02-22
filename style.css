@@ -745,3 +745,8 @@ main{
 footer{
   margin-top:auto;
 }
+/* ================= NO SCROLL HOME ================= */
+
+main.home-no-scroll {
+  overflow:hidden;
+}

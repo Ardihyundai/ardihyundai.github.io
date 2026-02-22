@@ -9,8 +9,9 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
+  body{
   margin:0;
-  font-family:'Segoe UI',sans-serif;
+  font-family:'Segoe UI', sans-serif;
   background:linear-gradient(135deg,#071b2f,#0e2f4d);
   color:#fff;
 
@@ -742,4 +743,9 @@ main{
 
 footer{
   margin-top:auto;
+}
+main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
 }

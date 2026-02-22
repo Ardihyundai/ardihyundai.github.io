@@ -679,8 +679,7 @@ section:last-of-type {
 /* ===== DESKTOP VERSION FIX ===== */
 @media (min-width: 992px){
 
-  /* Grid lineup jadi 3 kolom */
-  .lineup-container{
+  .lineup{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap:30px;
@@ -688,21 +687,17 @@ section:last-of-type {
     margin:auto;
   }
 
-  /* Card tidak terlalu besar */
-  .unit-card{
-    max-width:100%;
-    padding:20px;
+  .unit-actions{
+    flex-direction:column; /* tetap vertikal */
   }
 
-  /* Tombol tidak full lebar */
   .btn,
   .btn-primary,
   .btn-outline,
   .btn-wa{
     width:100%;
-    max-width:250px;
+    max-width:260px;
     margin:auto;
-    display:block;
   }
 
 }

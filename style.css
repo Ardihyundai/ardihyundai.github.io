@@ -268,21 +268,39 @@ color:#000;
   z-index: 9999;
   background: rgba(0,0,0,0.6);
 
-  /* ubah jadi bottom */
-  align-items: flex-end;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .modal-content {
   width: 100%;
-  max-width: 500px;
-  height: 85vh;              /* tinggi fix */
-  background: linear-gradient(135deg,#0f2b46,#123a5e);
-  border-radius: 20px 20px 0 0;  /* rounded atas saja */
-  padding: 20px;
+  max-width: 420px;
+
+  /* INI KUNCINYA */
+  max-height: 95vh;
   overflow-y: auto;
+
+  background: linear-gradient(135deg,#0f2b46,#123a5e);
+  border-radius: 18px;
+  padding: 18px;
 }
 
+.modal-content h2,
+.modal-content h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.modal-content input,
+.modal-content select {
+  margin-bottom: 8px;
+}
+
+.modal-content button {
+  margin: 6px 0;
+}
 .modal-content input,
 .modal-content select{
   width:100%;

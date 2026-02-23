@@ -22,7 +22,7 @@
 </script>
 <script src="global.js" defer></script>
 </head>
-<body 
+<body>
 <!-- LOADING SCREEN -->
 <div id="loader">
   <div class="loader-content">
@@ -203,129 +203,7 @@ Kirim Test Drive
 <footer>
   © 2026 Official Sales Ardi Hyundai — All Rights Reserved
 </footer>
-<script>
-const hargaData = {
 
-  "Stargazer": {
-    "Active MT": 259700000,
-    "Active IVT": 273100000,
-    "Essential MT 7 Seat": 271800000,
-    "Essential MT 6 Seat": 272800000,
-    "Essential IVT 7 Seat": 283500000,
-    "Essential IVT 6 Seat": 284500000,
-    "Essential Tech 7 Seat": 304000000,
-    "Essential Tech 6 Seat": 305000000,
-    "Prime IVT 7 Seat 1 Tone": 333400000,
-    "Prime IVT 7 Seat 2 Tone": 334900000,
-    "Prime IVT 6 Seat 1 Tone": 334400000,
-    "Prime IVT 6 Seat 2 Tone": 335900000,
-    "Style 6 Seat": 350950000,
-    "X Prime 6 Seat One Tone": 361300000,
-    "X Prime 6 Seat Two Tone": 362800000,
-    "X Style 7 Seat": 349450000,
-    "X Prime 7 Seat One Tone": 360300000,
-    "X Prime 7 Seat Two Tone": 361800000
-  },
-
-  "Stargazer Cartenz": {
-    "Trend+ MT": 277500000,
-    "Trend+ IVT": 287750000,
-    "Style MT 7 Seat": 298000000,
-    "Style MT Captain": 301500000,
-    "Style IVT 7 Seat": 308200000,
-    "Style IVT Captain": 311700000,
-    "Smart MT 7 Seat": 341750000,
-    "Smart MT Captain": 345250000,
-    "Prime IVT 7 Seat": 359700000,
-    "Prime IVT Captain": 363200000,
-    "Cartenz X Trend 7 Seat": 371750000,
-    "Cartenz X Trend Captain": 375250000,
-    "Cartenz X Style 7 Seat": 385200000,
-    "Cartenz X Style Captain": 388700000,
-    "Cartenz X Prime Package 7 Seat": 402200000,
-    "Cartenz X Prime Package Captain": 405700000
-  },
-
-  "Creta": {
-    "6MT Active": 309300000,
-    "IVT Trend": 363150000,
-    "IVT Style": 408850000,
-    "IVT Prime One Tone": 440000000,
-    "IVT Prime Two Tone": 443000000,
-    "Alpha One Tone": 456500000,
-    "Alpha Two Tone": 459500000,
-    "N Line One Tone": 474500000,
-    "N Line Two Tone": 477500000,
-    "N Line Turbo One Tone": 522500000,
-    "N Line Turbo Two Tone": 525500000
-  },
-
-  "IONIQ 5": {
-    "Prime Reguler": 810000000,
-    "Prime Extended": 852500000,
-    "Signature Reguler": 874900000,
-    "Signature Extended": 926600000
-  },
-
-  "Kona EV": {
-    "Style Reguler": 566250000,
-    "Prime Reguler": 584500000,
-    "Prime Extended": 635500000,
-    "Signature Reguler": 652650000,
-    "Signature Two Tone": 655650000,
-    "Signature Extended": 669550000,
-    "Signature Extended Two Tone": 672550000,
-    "N Line": 690550000,
-    "N Line Two Tone": 693550000
-  },
-
-  "Palisade": {
-    "HEV Signature GRG": 1133400000,
-    "HEV Calligraphy GRA": 1306200000,
-    "HEV Calligraphy AWD GRA": 1393300000
-  },
-
-  "Santa Fe": {
-    "2.5 AT Prime": 737300000,
-    "2.5 AT Calligraphy": 826800000,
-    "1.6 AT HEV Prime": 828900000,
-    "1.6 AT HEV Calligraphy": 916200000
-  }
-
-};
-
-const unitSelect = document.getElementById("unitSelect");
-const typeSelect = document.getElementById("typeSelect");
-const hargaInput = document.getElementById("hargaOtr");
-
-// Saat pilih unit
-if (unitSelect) {
-  unitSelect.addEventListener("change", function () {
-  const selectedUnit = this.value;
-
-  typeSelect.innerHTML = '<option value="">Pilih Type</option>';
-  hargaInput.value = "";
-
-  if (hargaData[selectedUnit]) {
-    Object.keys(hargaData[selectedUnit]).forEach(function (type) {
-      const option = document.createElement("option");
-      option.value = type;
-      option.textContent = type;
-      typeSelect.appendChild(option);
-    });
-  }
-});
-
-// Saat pilih type
-typeSelect.addEventListener("change", function () {
-  const selectedUnit = unitSelect.value;
-  const selectedType = this.value;
-
-  if (hargaData[selectedUnit] && hargaData[selectedUnit][selectedType]) {
-    hargaInput.value = hargaData[selectedUnit][selectedType];
-  }
-});
-</script>
 
   <script>
 function isiDP20(){}

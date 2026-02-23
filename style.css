@@ -264,22 +264,23 @@ color:#000;
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999;
   inset: 0;
+  z-index: 9999;
   background: rgba(0,0,0,0.6);
+
+  /* ubah jadi bottom */
+  align-items: flex-end;
   justify-content: center;
-  align-items: center;
-  padding: 15px;
 }
 
 .modal-content {
-  background: linear-gradient(135deg,#0f2b46,#123a5e);
   width: 100%;
-  max-width: 420px;
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: 20px;
+  max-width: 500px;
+  height: 85vh;              /* tinggi fix */
+  background: linear-gradient(135deg,#0f2b46,#123a5e);
+  border-radius: 20px 20px 0 0;  /* rounded atas saja */
   padding: 20px;
+  overflow-y: auto;
 }
 
 .modal-content input,

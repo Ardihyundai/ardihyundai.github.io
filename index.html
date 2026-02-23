@@ -99,31 +99,29 @@
   
 
 
-<!-- ================= MODAL SIMULASI ================= -->
+<!-- MODAL SIMULASI -->
 <div id="modalSimulasi" class="modal">
   <div class="modal-content">
-    <h3>Kalkulator Simulasi Kredit</h3>
+    <h2>Kalkulator Simulasi Kredit</h2>
 
     <select id="unitSelect" onchange="loadType()">
-  <option value="">Pilih Unit</option>
-  <option value="Stargazer">Stargazer</option>
-  <option value="Stargazer Cartenz">Stargazer Cartenz</option>
-  <option value="Creta">Creta</option>
-  <option value="Kona EV">Kona EV</option>
-  <option value="IONIQ 5">IONIQ 5</option>
-  <option value="Santa Fe">Santa Fe</option>
-  <option value="Palisade">Palisade</option>
-</select>
+      <option value="">Pilih Unit</option>
+      <option value="Stargazer">Stargazer</option>
+      <option value="Stargazer Cartenz">Stargazer Cartenz</option>
+      <option value="Creta">Creta</option>
+      <option value="Kona EV">Kona EV</option>
+      <option value="IONIQ 5">IONIQ 5</option>
+      <option value="Santa Fe">Santa Fe</option>
+      <option value="Palisade">Palisade</option>
+    </select>
 
-<select id="typeSelect" onchange="isiOTR()">
-  <option value="">Pilih Type</option>
-</select>
+    <select id="typeSelect" onchange="isiOTR()">
+      <option value="">Pilih Type</option>
+    </select>
 
-    <input type="text" id="hargaOTR" placeholder="Harga OTR" readonly />
+    <input type="text" id="hargaOTR" placeholder="Harga OTR" readonly>
 
-    <button class="btn btn-outline" onclick="isiDP20()">
-      DP 20%
-    </button>
+    <button onclick="isiDP20()">DP 20%</button>
 
     <input type="text" id="dpManual" placeholder="Atau Masukkan DP Manual">
 
@@ -135,25 +133,18 @@
       <option value="5">5 Tahun</option>
     </select>
 
-    <button class="btn btn-primary" onclick="hitungSimulasi()">
-      Hitung Simulasi
-    </button>
-     <button class="btn btn-success" onclick="kirimSimulasiWA()">
-Kirim ke WhatsApp
-</button>
-    <button class="btn btn-outline" onclick="generatePDF()">
-Download PDF
-</button>
-    <div id="hasilSimulasi" style="margin-top:10px;"></div>
+    <button onclick="hitungSimulasi()">Hitung Simulasi</button>
+<div id="hasilSimulasi"></div>
 
 <p class="simulasi-note">
 Simulasi kredit ini bersifat estimasi dan bukan perhitungan resmi leasing.
 Nominal DP dan cicilan dapat berubah sesuai kebijakan pembiayaan
 serta hasil approval kredit.
 </p>
-    <button class="btn btn-success" onclick="closeSimulasi()">
-      Tutup
-    </button>
+
+<button onclick="kirimSimulasiWA()">Kirim ke WhatsApp</button>
+<button onclick="generatePDF()">Download PDF</button>
+<button onclick="closeSimulasi()">Tutup</button>
   </div>
 </div>
 

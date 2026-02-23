@@ -104,7 +104,7 @@
   <div class="modal-content">
     <h3>Kalkulator Simulasi Kredit</h3>
 
-    <select id="unitSelect">
+    <select id="unitSelect" onchange="loadType()">
   <option value="">Pilih Unit</option>
   <option value="Stargazer">Stargazer</option>
   <option value="Stargazer Cartenz">Stargazer Cartenz</option>
@@ -115,7 +115,7 @@
   <option value="Palisade">Palisade</option>
 </select>
 
-<select id="typeSelect">
+<select id="typeSelect" onchange="isiOTR()">
   <option value="">Pilih Type</option>
 </select>
 

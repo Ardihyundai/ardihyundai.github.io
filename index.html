@@ -299,7 +299,8 @@ const typeSelect = document.getElementById("typeSelect");
 const hargaInput = document.getElementById("hargaOtr");
 
 // Saat pilih unit
-unitSelect.addEventListener("change", function () {
+if (unitSelect) {
+  unitSelect.addEventListener("change", function () {
   const selectedUnit = this.value;
 
   typeSelect.innerHTML = '<option value="">Pilih Type</option>';
@@ -332,6 +333,15 @@ function hitungSimulasi(){}
 function generatePDF(){}
 function kirimSimulasiWA(){}
 function closeSimulasi(){}
+</script>
+
+  <script>
+window.addEventListener("load", function() {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.display = "none";
+  }
+});
 </script>
 </body>
 </html>

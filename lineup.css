@@ -617,3 +617,33 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.lineup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+}
+
+@media (max-width: 992px){
+  .lineup {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .lineup {
+    grid-template-columns: 1fr;
+  }
+}
+
+.unit-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.unit-card img {
+  height: 180px;
+  object-fit: contain;
+}
